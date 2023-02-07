@@ -73,7 +73,7 @@ export const Users = [
     
     {
         "id": 10,
-        "first_name": "Derrik",
+        "first_name": "Derick",
         "last_name": "Halvorsen",
         "email": "dHalvorsen@loc.gov",
         "gender": "Male",
