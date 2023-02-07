@@ -3,15 +3,32 @@ const app = express();
 import cors from "cors";
 import { Users } from "./users.js";
 
-const PORT = 5000;
+const port = 5000;
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
-app.get("/", (req, res) => {
+app.get("/", async (req, res) => {
+  
+  const {q} = req.query
 
-  res.json(Users);
+  let keys = ["first_name", "last_name", "email"];
+
+  
+
+  const func = (data) => {
+    return data.filter((item) => {
+keys.some((key) => item[key]
+      );
+    });
+  };
+
+    let result = func(Users)
+  
+  res.json(result);
 });
 
-app.listen(PORT, () => {
+app.listen(port, () => {
   console.log("Server is running");
 });
